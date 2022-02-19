@@ -11,12 +11,12 @@ def gamma_transform(image, gamma, c = 1):
 
 # 1.1
 img = imread('lena.png', as_gray=True)
-# imshow(gamma_transform(img, 0.3)) # gamma = [0.3, 0.5, 1.0, 2.0, 3.0]
+# imshow(gamma_transform(img, 0.3)) # gamma = [0.3, 0.5, 0.8, 2.0, 3.0]
 
 # 1.2
 autumn = imread('autumn.tif')
 # imshow(autumn)
-# imshow(gamma_transform(autumn, 0.3)) # gamma = [0.3, 0.5, 1.0, 2.0, 3.0]
+# imshow(gamma_transform(autumn, 0.3)) # gamma = [0.3, 0.5, 0.8, 2.0, 3.0]
 
 # 1.3
 # imshow(autumn)
