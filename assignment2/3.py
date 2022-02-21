@@ -8,6 +8,42 @@ from scipy import ndimage
 img = io.imread('eight.tif')
 img_sp = su.random_noise(img, mode='s&p')
 img_gau = su.random_noise(img, mode='gaussian')
+fig = plt.figure()
+plt.gray()  # show the filtered result in grayscale
+ax1 = fig.add_subplot(131, title='original image')  # left side
+# ax1.set_title('mean filtering of salt & pepper')
+ax2 = fig.add_subplot(133, title='original image with s&p noise')  # right side
+# ax2.set_title('median filtering of salt & pepper')
+# ax1.axes.xaxis.set_visible(False)
+# ax1.axes.yaxis.set_visible(False)
+# ax2.axes.xaxis.set_visible(False)
+# ax2.axes.yaxis.set_visible(False)
+ax1.imshow(img)
+ax2.imshow(img_sp)
+# plt.title('mean filtering of salt & pepper')
+plt.savefig('ori+sp.png')
+# plt.show()
+# plt.savefig('eight_sp_filter.tif')
+plt.close()
+
+fig = plt.figure()
+plt.gray()  # show the filtered result in grayscale
+ax1 = fig.add_subplot(131, title='original image')  # left side
+# ax1.set_title('mean filtering of salt & pepper')
+ax2 = fig.add_subplot(133, title='original image with gau noise')  # right side
+# ax2.set_title('median filtering of salt & pepper')
+# ax1.axes.xaxis.set_visible(False)
+# ax1.axes.yaxis.set_visible(False)
+# ax2.axes.xaxis.set_visible(False)
+# ax2.axes.yaxis.set_visible(False)
+ax1.imshow(img)
+ax2.imshow(img_sp)
+# plt.title('mean filtering of salt & pepper')
+plt.savefig('ori+gau.png')
+# plt.show()
+# plt.savefig('eight_sp_filter.tif')
+plt.close()
+
 
 img_sp_meanf = ndimage.uniform_filter(img_sp, size=3)
 img_sp_medianf = ndimage.median_filter(img_sp, size=3)
@@ -16,7 +52,7 @@ img_gau_meanf = ndimage.uniform_filter(img_gau, size=3)
 img_gau_medianf = ndimage.median_filter(img_gau, size=3)
 
 fig = plt.figure()
-plt.gray()  # show the filtered result in grayscale
+# plt.gray()  # show the filtered result in grayscale
 ax1 = fig.add_subplot(131, title='mean filtering of salt & pepper')  # left side
 # ax1.set_title('mean filtering of salt & pepper')
 ax2 = fig.add_subplot(133, title='median filtering of salt & pepper')  # right side
