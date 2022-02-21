@@ -48,12 +48,16 @@ def bilateralFilter(img,k,sigma,tau):
 
 # 4.3
 
-fig = plt.figure()
+
+fig = plt.figure(figsize=(16, 8))
 plt.gray()  # show the filtered result in grayscale
-for s in range(1, 9):
+
+for s in range(1, 5):
+    st=3
+    t=10**(s-3)
     if s != 1:
-        img_gauf = bilateralFilter(img_gau, 3, s**2, 2*s)
-        ax = fig.add_subplot(2, 4, s, title='σ='+str(s**2)+',τ='+str(2*s))
+        img_gauf = bilateralFilter(img_gau, 9, st, t)
+        ax = fig.add_subplot(2, 4, s, title='σ='+str(st)+',τ='+str(t))
         ax.axes.xaxis.set_visible(False)
         ax.axes.yaxis.set_visible(False)
         ax.imshow(img_gauf)
@@ -62,6 +66,46 @@ for s in range(1, 9):
         ax.axes.xaxis.set_visible(False)
         ax.axes.yaxis.set_visible(False)
         ax.imshow(img_gau)
-plt.savefig('4.3.png')
-# plt.show()
+plt.savefig('4.3.1.png')
+plt.show()
 plt.close()
+
+
+
+fig = plt.figure(figsize=(16, 8))
+plt.gray()  # show the filtered result in grayscale
+
+for s in range(1, 5):
+    st=10**(s-2)
+    t=1
+    if s != 1:
+        img_gauf = bilateralFilter(img_gau, 9, st, t)
+        ax = fig.add_subplot(2, 4, s, title='σ='+str(st)+',τ='+str(t))
+        ax.axes.xaxis.set_visible(False)
+        ax.axes.yaxis.set_visible(False)
+        ax.imshow(img_gauf)
+    else:
+        ax = fig.add_subplot(2, 4, s, title='original gau noise')
+        ax.axes.xaxis.set_visible(False)
+        ax.axes.yaxis.set_visible(False)
+        ax.imshow(img_gau)
+plt.savefig('4.3.2.png')
+plt.show()
+plt.close()
+# fig = plt.figure()
+# plt.gray()  # show the filtered result in grayscale
+# for s in range(1, 9):
+#     if s != 1:
+#         img_gauf = bilateralFilter(img_gau, 3, s**2, 2*s)
+#         ax = fig.add_subplot(2, 4, s, title='σ='+str(s**2)+',τ='+str(2*s))
+#         ax.axes.xaxis.set_visible(False)
+#         ax.axes.yaxis.set_visible(False)
+#         ax.imshow(img_gauf)
+#     else:
+#         ax = fig.add_subplot(2, 4, s, title='original gau noise')
+#         ax.axes.xaxis.set_visible(False)
+#         ax.axes.yaxis.set_visible(False)
+#         ax.imshow(img_gau)
+# plt.savefig('4.3.png')
+# # plt.show()
+# plt.close()
