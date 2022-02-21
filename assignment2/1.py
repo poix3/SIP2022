@@ -20,10 +20,9 @@ imshow(gamma_transform(autumn, 0.3)) # gamma = [0.3, 0.5, 0.8, 2.0, 3.0]
 
 # 1.3
 hsv_img = rgb2hsv(autumn)
-imshow(hsv_img)
 value_img = hsv_img[:, :, 2]
 imshow(value_img)
 value_img_gamma = gamma_transform(value_img, 3.0) # gamma = [0.3, 0.5, 0.8, 2.0, 3.0]
 hsv_img[:, :, 2] = value_img_gamma
-imshow(hsv_img)
+imshow(value_img_gamma)
 imshow(hsv2rgb(hsv_img))
