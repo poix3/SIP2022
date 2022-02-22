@@ -70,6 +70,8 @@ plt.savefig('4.3.1.png')
 plt.show()
 plt.close()
 
+
+
 fig = plt.figure(figsize=(16, 8))
 plt.gray()  # show the filtered result in grayscale
 
@@ -90,8 +92,6 @@ for s in range(1, 5):
 plt.savefig('4.3.2.png')
 plt.show()
 plt.close()
-
-
 # fig = plt.figure()
 # plt.gray()  # show the filtered result in grayscale
 # for s in range(1, 9):
