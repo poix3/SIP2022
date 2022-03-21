@@ -5,13 +5,13 @@ from skimage.io import imread
 from scipy.signal import convolve2d
 
 # 2.4
-import numpy as np
-
 def Ixx(x, y, tau, sigma):
-    return (x**2-tau**2-sigma**2)*np.exp(-(x**2+y**2)/(2*(tau**2+sigma**2)))/(2*np.pi*(tau**2+sigma**2)**3)
+    return (x**2-tau**2-sigma**2)*\
+        np.exp(-(x**2+y**2)/(2*(tau**2+sigma**2)))/(2*np.pi*(tau**2+sigma**2)**3)
 
 def Iyy(x, y, tau, sigma):
-    return (y**2-tau**2-sigma**2)*np.exp(-(x**2+y**2)/(2*(tau**2+sigma**2)))/(2*np.pi*(tau**2+sigma**2)**3)
+    return (y**2-tau**2-sigma**2)*\
+        np.exp(-(x**2+y**2)/(2*(tau**2+sigma**2)))/(2*np.pi*(tau**2+sigma**2)**3)
 
 def H(x, y, tau, sigma=1.0):
     return tau**2*(Ixx(x,y,tau,sigma)+Iyy(x,y,tau,sigma))
