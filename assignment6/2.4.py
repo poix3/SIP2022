@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from skimage.io import imread
 from scipy.signal import convolve2d
 
-# 2.3
+# 2.4
 import numpy as np
 
 def Ixx(x, y, tau, sigma):
